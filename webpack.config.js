@@ -27,7 +27,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new ManifestPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'policy.css'
+            filename: '[name].css'
         })
     ]
 };
