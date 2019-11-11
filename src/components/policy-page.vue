@@ -3,7 +3,7 @@
         <h1 class="policy-page">Policy Page in Vue</h1>
 
         <ul>
-            <li>Client Name: {{ name }}</li>
+            <li>Client Name: {{ info.name }}</li>
             <li>Policy: {{ info.policy }}</li>
             <li>Effective Date: {{ info.startDate }}</li>
             <li>Cost: {{ info.cost }}</li>
@@ -17,15 +17,12 @@
     export default {
         data() {
             return {
-                info: {},
-                name: ''
+                info: {}
             }
         },
         mounted() {
             axios.get('/policyapi/api/policy')
                 .then(response => this.info = response.data);
-            axios.get('/clientapi/api/client')
-                .then(response => this.name = response.data.name);
         }
     }
 </script>
