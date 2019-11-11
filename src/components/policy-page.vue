@@ -24,8 +24,8 @@
         mounted() {
             axios.get('/policyapi/api/policy')
                 .then(response => this.info = response.data);
-            axios.get('/clientapi/api/client')
-                .then(response => this.name = response.data.name);
+            window.clientService.getClient()
+                .then(response => this.name = response.name);
         }
     }
 </script>
